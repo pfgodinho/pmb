@@ -35,7 +35,7 @@ Funcionalidade: Meu Trello UI
     |felipegodinho2     |BDD          |Comentario dois  |X(fora)        |               |
     |felipegodinho2     |BDD          |Comentario dois  |               |               |
 
-    Esquema do Cenario: Excluir um card
+    Esquema do Cenario: Excluir um carddddddddd
       Dado "<user>" logado
       E acesso ao "<board>"
       E possua um "<card>"
