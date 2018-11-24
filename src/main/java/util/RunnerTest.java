@@ -6,8 +6,8 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "TrelloUI.feature"
+        features = "src/main/resources/features",
+        glue = {"steps", "util"}
 )
 public class RunnerTest {
-
 }
