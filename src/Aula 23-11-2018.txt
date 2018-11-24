@@ -1,0 +1,78 @@
+Funcionalidade: Trello
+
+Cenário: Criar um Card
+	Dado: "USUÁRIO" logado
+	E: board criado
+	Quando: Clicar em Adicionar um cartão
+	E: Inserir um "TÍTULO"
+	E: "CLICAR"
+	Então: O "CARD" é mostrado
+
+Tabela:
+USUÁRIO								|TÍTULO				|CLICAR					|CARD
+felipe.godinho@primecontrol.com		|Titulo 1			|Fora					|Titulo 1
+felipe.godinho@primecontrol.com		|Titulo 2			|Adicionar Cartão		|Titulo 2
+felipe.godinho@primecontrol.com		|					|						|
+aaaaabbbbb.cccc@primecontrol.com	|					|						|
+
+============================================================================================================
+Cenário: Comentar um card
+	Dado: "USUÁRIO" logado
+	E: board criado
+	E: Possua um card
+	Quando: Clicar no card
+	E: Clicar no quadro Adicionar Comentário
+	E: Inserir um "TEXTO"
+	E: "CLICAR" em Salvar
+	Então: "COMENTÁRIO" é apresentado abaixo
+
+Tabela:
+USUÁRIO								|TEXTO				|CLICAR					|COMENTARIO
+felipe.godinho@primecontrol.com		|Comentário um		|Salvar					|Comentário um
+felipe.godinho@primecontrol.com		|Comentário dois	|Fora					|
+felipe.godinho@primecontrol.com		|					|X(fechar)				|
+aaaabbbbb.cccc@primecontrol.com		|					|						|
+
+
+============================================================================================================
+
+Cenário: Excluir um Card
+	Dado: "USUÁRIO" logado
+	E: board criado
+	E: Possua um card
+	Quando: Clicar no card
+	E: Clicar no link Compartilhar e mais
+	E: Clicar no link Excluir
+	E: Clicar "BOTAO"
+	Então: o Card não será apresentado
+	
+Tabela:
+USUÁRIO								|BOTAO				|
+felipe.godinho@primecontrol.com		|Excluir
+felipe.godinho@primecontrol.com		|Fora
+aaabbbb.ccc@primecontrol.com		|
+
+=================================================================================================================
+Correção
+
+#language: pt
+#encoding: UTF-8
+@ui
+
+Funcionalidade: Trello UI
+Esquema de cenario: Criando, comentando e deletando um card
+	DADO: que esteja logado no trello
+	E: acesso o board
+	QUANDO: crio um card com o nome "<card_name>"
+	E: comento "<comment>"
+	ENTÃO: o card deve estar na lista
+	QuANDO: excluo o card
+	ENTÃO: o card não existe mais
+	
+Exemplo:
+Tabela:
+card_name							|comment
+Alex card							|comentario alex card
+Alex card 2							|comentario
+
+
