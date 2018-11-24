@@ -2,11 +2,19 @@ package steps;
 
 import cucumber.api.PendingException;
 import cucumber.api.java.pt.*;
+import pom.LoginPage;
+import util.Hook;
 
 public class TrelloSteps {
+    LoginPage loginPage;
+
     @Dado("^que esteja logado no trello$")
-    public void queEstejaLogadoNoTrello() {
+    public void queEstejaLogadoNoTrello() throws Throwable{
         System.out.println("queEstejaLogadoNoTrello");
+        loginPage = new LoginPage();
+        loginPage.access();
+        loginPage.doLogin("felipegodinho2", "EscreviEsaiCorrendo");
+
     }
 
     @E("^acesso o board$")
@@ -22,13 +30,11 @@ public class TrelloSteps {
     @E("^comento \"([^\"]*)\"$")
     public void comento(String arg0) throws Throwable {
         System.out.println("comento");
-
     }
 
     @Entao("^o card deve estar na lista$")
     public void oCardDeveEstarNaLista() {
         System.out.println("oCardDeveEstarNaLista");
-
     }
 
     @Quando("^excluo o card$")
@@ -39,5 +45,9 @@ public class TrelloSteps {
     @Entao("^o card não existe mais$")
     public void oCardNãoExisteMais() {
         System.out.println("oCardNaoExisteMais");
+    }
+
+    @Entao("^o card nao existe mais$")
+    public void oCardNaoExisteMais() {
     }
 }

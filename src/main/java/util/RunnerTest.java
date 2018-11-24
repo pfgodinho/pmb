@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/main/resources/features",
+        features = "C:/Users/avillanova/IdeaProjects/pmb/src/main/resources",
         glue = {"steps", "util"}
 )
 public class RunnerTest {

@@ -12,7 +12,6 @@ Funcionalidade: Trello UI
     Entao  o card deve estar na lista
     Quando  excluo o card
     Entao  o card nao existe mais
-
     Exemplos:
       |cardName  | comment |
       |Alex card  | comentario alex card |
