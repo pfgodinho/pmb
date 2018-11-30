@@ -28,15 +28,19 @@ public class LoginPage {
     }
 
     public LoginPage doLogin(String user, String password){
-        userInput.sendKeys(user);
-        passwordInput.sendKeys(password);
-        loginButton.click();
+        waitBy(userInput).sendKeys(user);
+        waitBy(passwordInput).sendKeys(password);
+        waitBy(loginButton).click();
+//        userInput.sendKeys(user);
+//        passwordInput.sendKeys(password);
+//        loginButton.click();
         return this;
     }
 
-    public LoginPage checkInitialPage(){
-        @FindBy(how = How.XPATH, xpath = )
-        return this;
+
+    public String checkInitialPage(){
+        return initialPage.getAtribute("aria-label");
     }
+
 
 }

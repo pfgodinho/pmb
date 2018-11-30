@@ -6,7 +6,8 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "C:/Users/avillanova/IdeaProjects/pmb/src/main/resources",
+        features = "C:\\Users\\opet\\IdeaProjects\\pmb\\src\\main\\resources",
+//        features = "src/main/resources",
         glue = {"steps", "util"}
 )
 public class RunnerTest {

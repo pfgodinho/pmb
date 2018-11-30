@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Hook {
-    protected static WebDriver driver;
+    public static WebDriver driver;
 
     @Before
     public void before(){
